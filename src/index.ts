@@ -67,7 +67,7 @@ export function render(
   const el = document.getElementById(selector.substring(1));
   vegaEmbed(el, spec, {
     defaultStyle: true,
-    loader: { http: { credentials: "same-origin" } },
+    loader: { target: "_blank", http: { credentials: "same-origin" } },
     ...opt,
     mode: type
   })
