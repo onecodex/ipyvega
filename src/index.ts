@@ -73,12 +73,12 @@ export function render(
   })
     .then(result => {
       const imageData = result.view
-        .toImageURL("png")
+        .toSVG()
         .then(imageData => {
           if (output_area !== undefined) {
             const output = {
               data: {
-                "image/png": imageData.split(",")[1]
+                "image/svg+xml": imageData,
               },
               metadata: { "jupyter-vega": selector },
               output_type: "display_data"
