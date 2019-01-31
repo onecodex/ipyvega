@@ -15,8 +15,7 @@ class VegaLite(VegaBase):
 
 def entry_point_renderer(spec, embed_options=None):
     vl = VegaLite(spec, opt=embed_options)
-    vl.display()
-    return {'text/plain': ''}
+    return vl._repr_mimebundle_()
 
 
 __all__ = ['VegaLite', 'entry_point_renderer']

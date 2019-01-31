@@ -11,8 +11,7 @@ class Vega(VegaBase):
 
 def entry_point_renderer(spec, embed_options=None):
     vl = Vega(spec, opt=embed_options)
-    vl.display()
-    return {'text/plain': ''}
+    return vl._repr_mimebundle_()
 
 
 __all__ = ['Vega', 'entry_point_renderer']

@@ -41,7 +41,3 @@ class VegaBase(object):
             {'application/javascript': self._generate_js(id)},
             {'jupyter-vega': '#{0}'.format(id)},
         )
-
-    def display(self):
-        """Render the visualization."""
-        display(self)

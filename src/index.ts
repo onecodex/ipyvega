@@ -76,16 +76,7 @@ export function render(
         .toSVG()
         .then(imageData => {
           if (output_area !== undefined) {
-            const output = {
-              data: {
-                "image/svg+xml": imageData,
-              },
-              metadata: { "jupyter-vega": selector },
-              output_type: "display_data"
-            };
-            // This appends the PNG output, but doesn't render it this time
-            // as the JS version will be rendered already.
-            output_area.outputs.push(output);
+            output_area.outputs[0]["data"]["image/svg+xml"] = imageData;
           }
         })
         .catch(error => showError(el, error));
